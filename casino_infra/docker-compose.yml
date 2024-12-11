@@ -1,0 +1,80 @@
+services:
+
+  db:
+    image: postgres:16-alpine
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - casino_postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  redis:
+    image: redis:7.2-alpine
+    restart: always
+    ports:
+      - "6739:6739"
+
+  wsgi:
+    build: 
+      context: ../app
+      dockerfile: Dockerfile
+    command: "sh -c ./wsgi.sh"
+    depends_on:
+      - redis
+      - db
+    # ports:
+    #   - "9000:9000"
+    volumes:
+      - casino_static_data:/static
+      - casino_media_data:/media
+    env_file:
+      - ../.env
+
+  asgi:
+    build: 
+      context: ../app
+      dockerfile: Dockerfile
+    command: "sh -c ./asgi.sh"
+    depends_on:
+      - redis
+      - db
+    # ports:
+    #   - "8000:8000"
+    env_file:
+      - ../.env
+
+  nginx:
+    image: nginx:1.21.3-alpine
+    restart: always
+    depends_on:
+      # - wsgi
+      - asgi
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - casino_static_data:/var/html/static/
+      - ./certs:/etc/nginx/certs     
+      - casino_media_data:/var/html/media/
+
+  celery:
+    build: ../app
+    command: /bin/sh -c "celery -A app worker -l INFO"
+    restart: always
+    depends_on:
+      - redis
+      # - wsgi
+      - asgi
+    env_file:
+      - ../.env
+
+
+volumes:
+  casino_postgres_data:
+  casino_static_data:
+  casino_media_data:

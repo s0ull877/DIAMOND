@@ -1,0 +1,137 @@
+body {
+    color: black;
+    background-color: #EFF0F3;
+}
+
+.background_games {
+    border-top: 1px solid #EFF0F3;
+}
+
+.rate_block {
+    border: 1px solid #EFF0F3;
+    background-color: #DADBE2;
+}
+
+.jekpot_status_bar, .jekpot_games_list {
+    background: linear-gradient(130deg, #ffffff 26%, #62a1ffe6 68%, rgb(187, 214, 255) 90%, rgb(208, 227, 255) 170%, #ffffff 58%, #ffffff 100%)
+}
+.auction_status_bar, .auction_content_new {
+    background: linear-gradient(130deg, rgb(255, 255, 255) 26%, rgb(255, 255, 255) 48%, rgb(215, 159, 79) 90%, white 170%, rgb(233, 197, 161) 58%, rgb(255, 255, 255) 100%)
+}
+.tictaktoe_status_bar {
+    background: linear-gradient(130deg, rgb(255, 255, 255) 26%, #d6acee 90%, #701BA0 125%, #ffffff 58%, rgb(255, 255, 255) 100%)
+}
+.wait-line {
+    background-color: #d6acee;
+}
+input[name="move"]:disabled + .custom-radio {
+    background: radial-gradient(50% 50%, #d6acee, #90b0ff12);
+}
+input[name="move"]:checked + .custom-radio {
+    background: radial-gradient(50% 50%, #d6acee, #90b0ff12);
+}
+
+
+.jekpot {
+    background: linear-gradient(130deg, #ffffff 26%, #9eaaff 48%, #2a3aa2 90%, #22294b 170%, rgb(40 32 24) 58%, rgb(39 32 24) 100%)
+
+}
+
+.aukcion {
+    background: linear-gradient(130deg, rgb(255 255 255) 26%, rgb(244 207 140) 48%, rgb(74 56 31) 100%, rgb(40 32 24) 58%, rgb(39 32 24) 100%)
+
+}
+
+.crestikinoloko {
+    background: linear-gradient(130deg, rgb(255 255 255) 26%, #db9fff 48%, #701BA0 100%, #000000 58%, rgb(39 32 24) 100%)
+
+}
+
+.about_type_game, .quantity, .input_text p, .background_games, .number_auction,
+.title_settings {
+    color: rgba(0, 0, 0, 0.800);
+}
+
+.keyboard, .menu_items {
+    background-color: #EFF0F3;
+}
+
+.balance_content, .resend, .history_elemnt, .theme, .dop-menu-theme,
+.lang, .dop-menu-lang, .theme-background, .lang-background, #bet-sum, .players,
+.auction_background, .create_game_settings, .people_to_game, #notification{
+    background-color: #fff !important;
+}
+
+.radio_type {
+    border-color: #EFF0F3;
+    background-color: #EFF0F3 !important;
+    color: black !important;
+}
+
+input[name="format"]:checked + .custom-radio {
+    color: black;
+    border-color: #DADBE2;
+    background-color: #DADBE2 !important;
+}
+
+input[name="max_members"]:checked + .custom-radio {
+    color: black;
+    border-color: #DADBE2;
+    background-color: #DADBE2 !important;
+}
+
+input[name="min_bet"] {
+    background-color: #EFF0F3 !important;
+    border: 1px solid #DADBE2;
+    color: black !important;
+}
+
+input[name="bet"] {
+    background-color: #EFF0F3 !important;
+    border: 1px solid #DADBE2;
+    color: black !important;
+}
+
+
+
+#bet-sum {
+    border:1px solid #DADBE2;
+    color: black;
+}
+
+.date_content, .state_balance_content {
+    color: #707385;
+}
+
+.title_type_game, .title_type_game_content, .sum, .full_history,
+.games_content_title, .result_game, .settings-select, .user-title, 
+.create_game span, a.no_hook:active, a.no_hook:hover, a.no_hook, .back_button span,
+.state_auction_content, .rate, .username, .auction_information, .people, .leader_title,
+.username_leader, .auction_information_text, .status_game_title, #notification-text {
+    color: black;
+    font-weight: 500;
+}
+
+.sum_leader {
+    color: #C37C4F;
+}
+.all_bank {
+    color: #FFC65B;
+}
+
+.dop-menu-lang p, 
+.dop-menu-theme p {
+    color: rgba(0, 0, 0, 0.712);
+
+}
+
+.resend_link {
+    color: #3F98FF;
+}
+
+.button_list {
+    padding-bottom: 10px;
+    border-top: 1px solid #DADBE2;
+    border-bottom: 1px solid #DADBE2;
+}
+
